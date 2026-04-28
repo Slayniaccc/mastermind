@@ -67,7 +67,20 @@ public class mastermind {
         return code;
     }
 
-    private static char[] captureGuess(int length) {
-        return new char[length];
+private static char[] captureGuess(int length) {
+    char[] guess = new char[length];
+
+    for (int i = 0; i < length; i++) {
+        guess[i] = detectColour();
     }
+
+    return guess;
+}
+    private static char detectColour() {
+    return 'R';
+}
+
+private static char mapToColour(int r, int g, int b) {
+    return 'R';
+}
 }
