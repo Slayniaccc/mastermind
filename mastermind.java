@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class mastermind {
@@ -64,6 +66,7 @@ if (!hintUsed && tries == 2) {
 } else {
     System.out.println("You lose! Code was: " + new String(secret));
     computerScore++;
+    logRound(secret, won);
 }
     }
     private static char[] generateCode(int length) {
@@ -125,5 +128,13 @@ private static String generateFeedback(char[] secret, char[] guess) {
     }
 
     return "+".repeat(correctPosition) + "-".repeat(correctColour);
+}
+private static void logRound(char[] secret, boolean won) {
+    try (FileWriter writer = new FileWriter("log.txt", true)) {
+        writer.write("Secret: " + new String(secret));
+        writer.write(", Result: " + (won ? "Win" : "Loss") + "\n");
+    } catch (IOException e) {
+        System.out.println("Error logging round");
+    }
 }
 }
