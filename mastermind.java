@@ -9,7 +9,7 @@ public class mastermind {
 
         while (running) {
             int mode = selectMode();
-            System.out.println("Selected mode: " + mode);
+            playRound(mode); // NEW LINE ADDED
             running = false;
         }
     }
@@ -17,5 +17,15 @@ public class mastermind {
     private static int selectMode() {
         System.out.println("Default mode selected");
         return 1;
+    }
+
+    // NEW METHOD
+    private static void playRound(int mode) {
+        int codeLength = 4;
+        int attempts = 6;
+
+        System.out.println("Round started");
+        System.out.println("Code length: " + codeLength);
+        System.out.println("Attempts: " + attempts);
     }
 }
