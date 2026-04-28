@@ -1,5 +1,15 @@
 public class mastermind {
+
     public static void main(String[] args) {
-        System.out.println("Mastermind started.");
+        runGame();
+    }
+
+    private static void runGame() {
+        boolean running = true;
+
+        while (running) {
+            System.out.println("Game loop running...");
+            running = false;
+        }
     }
 }
