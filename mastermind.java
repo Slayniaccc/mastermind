@@ -8,8 +8,14 @@ public class mastermind {
         boolean running = true;
 
         while (running) {
-            System.out.println("Game loop running...");
+            int mode = selectMode();
+            System.out.println("Selected mode: " + mode);
             running = false;
         }
+    }
+
+    private static int selectMode() {
+        System.out.println("Default mode selected");
+        return 1;
     }
 }
