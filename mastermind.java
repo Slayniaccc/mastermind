@@ -3,6 +3,7 @@ import java.util.*;
 public class mastermind {
 
     private static Random random = new Random();
+    private static boolean hintUsed = false;
 
     public static void main(String[] args) {
         runGame();
@@ -44,7 +45,9 @@ public class mastermind {
         won = true;
         break;
     }
-
+if (!hintUsed && tries == 2) {
+    useHint(secret);
+}
             tries++;
         }
 
