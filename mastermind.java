@@ -4,6 +4,8 @@ public class mastermind {
 
     private static Random random = new Random();
     private static boolean hintUsed = false;
+    private static int playerScore = 0;
+private static int computerScore = 0;
 
     public static void main(String[] args) {
         runGame();
@@ -15,9 +17,14 @@ public class mastermind {
         while (running) {
             int mode = selectMode();
             playRound(mode);
-            running = false;
+            running = postGame();
         }
     }
+    private static boolean postGame() {
+    System.out.println("Score - Player: " + playerScore + " | Computer: " + computerScore);
+    System.out.println("Game finished.");
+    return false;
+}
 
     private static int selectMode() {
         System.out.println("Default mode selected");
@@ -51,13 +58,14 @@ if (!hintUsed && tries == 2) {
             tries++;
         }
 
-        if (won) {
-            System.out.println("You win!");
-        } else {
-            System.out.println("You lose! Code was: " + new String(secret));
-        }
+       if (won) {
+    System.out.println("You win!");
+    playerScore++;
+} else {
+    System.out.println("You lose! Code was: " + new String(secret));
+    computerScore++;
+}
     }
-
     private static char[] generateCode(int length) {
         char[] colours = {'R','G','B','Y','O','P'};
         List<Character> pool = new ArrayList<>();
