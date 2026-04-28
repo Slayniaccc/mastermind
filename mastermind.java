@@ -37,10 +37,13 @@ public class mastermind {
 
             char[] guess = captureGuess(codeLength);
 
-            if (Arrays.equals(secret, guess)) {
-                won = true;
-                break;
-            }
+           String feedback = generateFeedback(secret, guess);
+    System.out.println("Feedback: " + feedback);
+
+    if (feedback.equals("+".repeat(codeLength))) {
+        won = true;
+        break;
+    }
 
             tries++;
         }
@@ -82,5 +85,34 @@ private static char[] captureGuess(int length) {
 
 private static char mapToColour(int r, int g, int b) {
     return 'R';
+}
+private static String generateFeedback(char[] secret, char[] guess) {
+    int correctPosition = 0;
+    int correctColour = 0;
+
+    boolean[] secretUsed = new boolean[secret.length];
+    boolean[] guessUsed = new boolean[guess.length];
+
+    for (int i = 0; i < secret.length; i++) {
+        if (guess[i] == secret[i]) {
+            correctPosition++;
+            secretUsed[i] = true;
+            guessUsed[i] = true;
+        }
+    }
+
+    for (int i = 0; i < guess.length; i++) {
+        if (!guessUsed[i]) {
+            for (int j = 0; j < secret.length; j++) {
+                if (!secretUsed[j] && guess[i] == secret[j]) {
+                    correctColour++;
+                    secretUsed[j] = true;
+                    break;
+                }
+            }
+        }
+    }
+
+    return "+".repeat(correctPosition) + "-".repeat(correctColour);
 }
 }
