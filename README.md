@@ -1,35 +1,68 @@
 # Mastermind (Java)
 
-This is a Java implementation of the classic Mastermind game.
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=java&logoColor=white)
 
-The goal is to guess a hidden sequence of colours. After each guess, you get feedback that tells you how close you are.
+A Java implementation of the classic Mastermind colour-guessing game. Originally built for SwiftBot hardware, now simplified to run on any machine.
 
-## How it works
+## How It Works
 
-- The game generates a random code using colours like R, G, B, Y, O, P
+- The game generates a random 4-colour code using R, G, B, Y, O, P (no repeats)
 - You make guesses one by one
 - After each guess:
-  - `+` means the right colour in the right position
-  - `-` means the right colour in the wrong position
-- You win if you guess the full sequence correctly
+  - `+` = right colour, right position
+  - `-` = right colour, wrong position
+- Win by guessing the full sequence correctly
 
 ## Features
 
 - Random code generation with no repeats
-- Feedback system using + and -
-- Hint system (reveals one position)
-- Score tracking between rounds
-- Basic logging of results
+- Feedback system using `+` and `-`
+- Hint system (reveals one correct position)
+- Score tracking across multiple rounds
+- File logging for game results
 
-## Running the program
+## Tech Stack
 
-1. Make sure you have Java installed
-2. Compile the file: javac mastermind.java
-3. Run the program: java mastermind
+- **Language:** Java
+- **Key Concepts:** OOP, File I/O, Input Validation, Exception Handling
+- **Tools:** Terminal / Command Line
+
+## Running the Program
+
+1. Make sure you have Java installed (JDK 8 or higher)
+2. Navigate to the project folder in your terminal
+3. Compile the file:
+   ```bash
+   javac mastermind.java
 
 
-## Note
+## Run the program:
+java mastermind
 
-The original version of this project used SwiftBot hardware, including buttons, camera input, and lights.
 
-This version has been simplified so it can run on any machine without extra hardware.
+## Gameplay Example:
+Welcome to Mastermind!
+Guess the 4-colour sequence (R,G,B,Y,O,P):
+
+Enter guess (e.g., R G B Y): R G B Y
+Feedback: ++--
+
+Enter guess: R B G Y
+Feedback: ++++
+
+Enter guess: R B G Y
+Feedback: ++++
+
+🎉 You win! Score: 3 guesses
+Play again? (y/n): n
+Thanks for playing!
+
+##Note:
+This is a simplified version of a project originally built for the SwiftBot hardware (Raspberry Pi with camera input, buttons, and LEDs). The hardware version featured camera-based colour detection and interactive button controls.
+
+#Future Improvements:
+Graphical user interface (GUI)
+
+Difficulty levels (longer colour sequences)
+
+Save high scores between sessions
