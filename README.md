@@ -32,37 +32,43 @@ A Java implementation of the classic Mastermind colour-guessing game. Originally
 1. Make sure you have Java installed (JDK 8 or higher)
 2. Navigate to the project folder in your terminal
 3. Compile the file:
-   ```bash
+```bash
    javac mastermind.java
-
-
-## Run the program:
-java mastermind
-
+```
+4. Run the program:
+```bash
+   java mastermind
+```
 
 ## Gameplay Example:
 Welcome to Mastermind!
+
 Guess the 4-colour sequence (R,G,B,Y,O,P):
 
 Enter guess (e.g., R G B Y): R G B Y
+
 Feedback: ++--
 
 Enter guess: R B G Y
+
 Feedback: ++++
 
 Enter guess: R B G Y
+
 Feedback: ++++
 
 🎉 You win! Score: 3 guesses
+
 Play again? (y/n): n
+
 Thanks for playing!
 
-##Note:
+## Note
+
 This is a simplified version of a project originally built for the SwiftBot hardware (Raspberry Pi with camera input, buttons, and LEDs). The hardware version featured camera-based colour detection and interactive button controls.
 
-#Future Improvements:
-Graphical user interface (GUI)
+## Future Improvements
 
-Difficulty levels (longer colour sequences)
-
-Save high scores between sessions
+- Graphical user interface (GUI)
+- Difficulty levels (longer colour sequences)
+- Save high scores between sessions
